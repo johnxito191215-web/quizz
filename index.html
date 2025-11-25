@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RETOPREPARATE - Quizz</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- PÁGINA DE LOGIN -->
+  <main id="page-login" class="page">
+    <h1 class="title">ACCESO CON PIN</h1>
+    <div class="card">
+      <label for="pin">INGRESE PIN</label>
+      <input id="pin" type="password" inputmode="numeric" maxlength="4" />
+      <button id="btn-enter">Entrar</button>
+      <p id="pin-msg" class="help"></p>
+    </div>
+  </main>
+
+  <!-- MENÚ DE EVALUACIONES -->
+  <section id="page-menu" class="page hidden">
+    <h1 class="title">MENÚ DE EVALUACIONES</h1>
+    <div class="card">
+      <p>Seleccione una asignatura:</p>
+      <ul class="menu-list">
+        <li><button class="open-quizz" data-subject="matematicas">Matemáticas - quizz</button></li>
+        <li><button class="open-quizz" data-subject="fisica">Física - quizz</button></li>
+        <li><button class="open-quizz" data-subject="quimica">Química - quizz</button></li>
+        <li><button class="open-quizz" data-subject="lenguaje">Lenguaje - quizz</button></li>
+      </ul>
+      <p class="small">PIN correcto: <strong>1234</strong></p>
+      <button id="btn-logout" class="secondary">Cerrar sesión</button>
+    </div>
+  </section>
+
+  <!-- PLANTILLA DE QUIZZ -->
+  <section id="page-quizz" class="page hidden">
+    <h1 id="quizz-title" class="title">QUIZZ</h1>
+    <div class="card" id="quizz-card">
+      <form id="quizz-form">
+        <!-- Preguntas se inyectan desde JS -->
+      </form>
+
+      <div class="actions">
+        <button id="btn-calificar">Calificar</button>
+        <button id="btn-back" class="secondary">Volver al menú</button>
+      </div>
+
+      <div id="result" class="result hidden" aria-live="polite">
+        Tu puntaje: <span id="result-percent">0</span>% (<span id="correct-count">0</span>/<span id="total-count">0</span>)
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

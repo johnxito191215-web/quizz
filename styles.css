@@ -1,0 +1,147 @@
+:root{
+  --bg:#cfeffd; /* azul claro */
+  --title-size:28px;
+  --content-size:16px;
+  --arial: "Arial", sans-serif;
+  --card-bg: #ffffffcc;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: var(--arial);
+  background:var(--bg);
+  color:#082032;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+/* Página/Secciones */
+.page{width:100%;max-width:720px}
+.hidden{display:none}
+
+.page {
+  min-height: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+#page-quizz {
+  overflow: visible !important;
+}
+
+/* Títulos */
+.title{
+  font-size:var(--title-size);
+  text-align:center;
+  text-transform:uppercase; /* MAYÚSCULAS */
+  margin:0 0 12px 0;
+  font-weight:700;
+}
+
+html, body {
+  height: auto !important;
+  overflow: auto !important;
+}
+
+/* Card */
+.card{
+  background:var(--card-bg);
+  padding:18px;
+  border-radius:12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Inputs y botones */
+input[type="password"]{
+  width:100%;
+  font-size:var(--content-size);
+  padding:10px;
+  margin:8px 0 12px 0;
+  border-radius:6px;
+  border:1px solid #b7d8e6;
+}
+
+button{
+  font-family:var(--arial);
+  font-size:var(--content-size);
+  padding:10px 14px;
+  border-radius:8px;
+  border: none;
+  cursor:pointer;
+  background:#0077b6;
+  color:white;
+  margin-right:8px;
+}
+
+button.secondary{
+  background:#6c757d;
+}
+
+/* MENU */
+.menu-list{list-style:none;padding:0;margin:12px 0}
+.menu-list li{margin-bottom:8px}
+
+/* QUIZZ - formato de opciones con circulo */
+.question{
+  margin-bottom:16px;
+  font-size:var(--content-size);
+}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+
+/* Radio oculto y estilo custom */
+.option{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:8px 12px;
+  border-radius:10px;
+  background: #f6fdff;
+  border:1px solid #d8eef8;
+  cursor:pointer;
+  user-select:none;
+}
+.option input{ /* escondemos el control nativo */
+  appearance:none;
+  -webkit-appearance:none;
+  width:0;height:0;margin:0;padding:0;
+}
+
+/* circulo visual */
+.option .circle{
+  width:22px;height:22px;border-radius:50%;
+  border:3px solid transparent;
+  background: white;
+  flex:0 0 22px;
+}
+
+/* cuando el input asociado está seleccionado, mostramos borde rojo */
+.option.selected{
+  box-shadow: 0 0 0 3px rgba(255,0,0,0.12);
+}
+.option.selected .circle{
+  border-color: red;
+}
+
+/* resultado */
+.result{
+  margin-top:12px;
+  padding:10px;
+  border-radius:8px;
+  background:#eaf6ff;
+  font-weight:700;
+}
+
+/* ayuda / textos pequeños */
+.small{font-size:13px}
+.help{color:#b00020}
+
+/* Responsivo */
+@media (max-width:420px){
+  :root{--title-size:22px;--content-size:14px}
+  button{width:100%; margin-bottom:8px}
+  .actions{display:flex;flex-direction:column}
+}
